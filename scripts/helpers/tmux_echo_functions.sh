@@ -3,8 +3,8 @@ _has_emacs_mode_keys() {
 }
 
 tmux_echo() {
-	local message="$1"
-	tmux run-shell "echo '$message'"
+    local message="$1"
+    tmux display-message -p "$message'"
 }
 
 echo_ok() {
@@ -19,7 +19,7 @@ end_message() {
 	if _has_emacs_mode_keys; then
 		local continue_key="ESCAPE"
 	else
-		local continue_key="ENTER"
+		local continue_key="qR"
 	fi
 	tmux_echo ""
 	tmux_echo "TMUX environment reloaded."
